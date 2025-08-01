@@ -12,8 +12,8 @@ for_window [class="spad"] resize set 896, move position center
 include /etc/sway/config-vars.d/*
 
 ## Specific windows
-for_window [class="graph85emulator.exe"] floating enable
-for_window [class="obs"] floating enable
+# for_window [class="graph85emulator.exe"] floating enable
+# for_window [class="obs"] floating enable
 
 ## Config monitor
 output * bg "#000000" solid_color
@@ -41,8 +41,8 @@ exec_always --no-startup-id xset b 0
 exec_always --no-startup-id xset s off
 exec_always --no-startup-id xset -dpms
 exec_always --no-startup-id numlockx on
-exec_always --no-startup-id discord
-assign [class="discord"] number "9:O"
+# exec_always --no-startup-id discord
+# assign [class="discord"] number "9:O"
 
 # Some bindings
 ## $mod+Shift+Ctrl+s
