@@ -21,7 +21,7 @@ install:
 
 sway:
 	echo "... Install sway"
-	sudo apt -y -qq install sway greetd dex i3blocks dunst xwayland kitty swaylock
+	sudo apt -q=2 install sway greetd dex i3blocks dunst xwayland kitty swaylock jq
 	sudo cp -fr .install/greetd.config.toml /etc/greetd/config.toml
 	# sudo apt -y -qq install x11-utils libreadline-dev libx11-dev libxinerama-dev libxft-dev numlockx xdotool
 	# sudo apt -y -qq install greetd xorg xinit dex i3 i3blocks i3status feh suckless-tools dunst 
