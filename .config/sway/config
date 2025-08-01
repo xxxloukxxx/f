@@ -1,0 +1,159 @@
+# General
+set $mod Mod4
+focus_follows_mouse no
+font pango:agave 14
+bindcode $mod+36 exec st                         # mod4+return
+bindcode $mod+40 exec --no-startup-id dmenu_run  # mod4+d
+
+bindcode $mod+9 exec spad                        # mod4+esc
+for_window [class="spad"] move scratchpad, scratchpad show
+for_window [class="spad"] resize set 896, move position center
+
+include /etc/sway/config-vars.d/*
+
+## Specific windows
+for_window [class="graph85emulator.exe"] floating enable
+for_window [class="obs"] floating enable
+
+## Config monitor
+output * bg "#000000" solid_color
+
+## Config Cursor
+seat seat0 xcursor_theme Adwaita 48
+
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+gsettings set $gnome-schema cursor-size 48
+}
+
+# Colors/Borders/Gaps
+default_border pixel 2
+client.focused          #81a1c1 #81a1c1 #ffffff #ff0000 #ff0000
+client.unfocused        #2e3440 #1f222d #888888 #1f222d
+client.focused_inactive #2e3440 #1f222d #888888 #1f222d
+client.placeholder      #2e3440 #1f222d #888888 #1f222d
+client.urgent           #900000 #900000 #ffffff #900000
+client.background       #000000
+
+# Autostart
+exec --no-startup-id dex --autostart --environment sway
+exec_always --no-startup-id xset b 0
+exec_always --no-startup-id xset s off
+exec_always --no-startup-id xset -dpms
+exec_always --no-startup-id numlockx on
+exec_always --no-startup-id discord
+assign [class="discord"] number "9:O"
+
+# Some bindings
+## $mod+Shift+Ctrl+s
+bindcode $mod+Shift+Ctrl+39 exec --no-startup-id flameshot gui
+
+# Audio
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle &&  pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle &&  pkill -RTMIN+10 i3blocks
+
+# Select/Move/Modify/Kill container
+bindcode $mod+113 focus left
+bindcode $mod+116 focus down
+bindcode $mod+111 focus up
+bindcode $mod+114 focus right
+bindcode $mod+Shift+113 move left
+bindcode $mod+Shift+116 move down
+bindcode $mod+Shift+111 move up
+bindcode $mod+Shift+114 move right
+## $mod+f
+bindcode $mod+41 fullscreen toggle
+## $mod+Shift+c
+bindcode $mod+shift+54 kill
+
+# Change container layout (stacked, tabbed, toggle split)
+floating_modifier $mod
+## $mod+shift+space
+bindcode $mod+Shift+65 floating toggle
+
+# Workspaces
+set $ws1 "1:Q"
+set $ws2 "2:W"
+set $ws3 "3:E"
+set $ws4 "4:R"
+set $ws5 "5:T"
+set $ws6 "6:Y"
+set $ws7 "7:U"
+set $ws8 "8:I"
+set $ws9 "9:O"
+
+# $mod+tab / $mod+shift+tab
+bindcode $mod+38 workspace next
+bindcode $mod+Shift+38 workspace prev
+bindcode $mod+23 workspace next
+bindcode $mod+Shift+23 workspace prev
+
+# $mod+p
+bindcode $mod+Shift+33 move workspace to output next
+
+# $mod+[q,w,e,r,t,y,u,i,o]
+bindcode $mod+24 workspace number $ws1
+bindcode $mod+25 workspace number $ws2
+bindcode $mod+26 workspace number $ws3
+bindcode $mod+27 workspace number $ws4
+bindcode $mod+28 workspace number $ws5
+bindcode $mod+29 workspace number $ws6
+bindcode $mod+30 workspace number $ws7
+bindcode $mod+31 workspace number $ws8
+bindcode $mod+32 workspace number $ws9
+bindcode $mod+Shift+24 move container to workspace number $ws1
+bindcode $mod+Shift+25 move container to workspace number $ws2
+bindcode $mod+Shift+26 move container to workspace number $ws3
+bindcode $mod+Shift+27 move container to workspace number $ws4
+bindcode $mod+Shift+28 move container to workspace number $ws5
+bindcode $mod+Shift+29 move container to workspace number $ws6
+bindcode $mod+Shift+30 move container to workspace number $ws7
+bindcode $mod+Shift+31 move container to workspace number $ws8
+bindcode $mod+Shift+32 move container to workspace number $ws9
+
+# Resize window
+mode "resize" {
+    bindcode 113 resize shrink width 10 px or 10 ppt
+        bindcode 116 resize grow height 10 px or 10 ppt
+        bindcode 111 resize shrink height 10 px or 10 ppt
+        bindcode 114 resize grow width 10 px or 10 ppt
+        bindcode 36 mode "default"
+        bindcode 9  mode "default"
+        bindcode $mod+42 mode "default"
+}
+bindcode $mod+42 mode "resize"
+
+# Lock/Reboot/Shutdown
+set $modsys "(l)ock - (r)eboot - (s)hutdown"
+mode $modsys {
+## [l, r, s]
+    bindcode 46 exec --no-startup-id swaylock -c 000000, mode "default"
+        bindcode 27 exec --no-startup-id systemctl reboot
+        bindcode 39 exec --no-startup-id systemctl poweroff
+## [Return, Esc]
+        bindcode 36 mode "default"
+        bindcode 9  mode "default"
+}
+bindcode $mod+Shift+22 mode $modsys
+
+# Bar
+bar {
+    strip_workspace_numbers yes
+        status_command i3blocks
+        font pango:agave 14
+        colors {
+            separator  #000000
+                background #000000
+                statusline #ffffff
+                focused_workspace  #000000 #000000 #ffffff
+                active_workspace   #000000 #000000 #5e81ac
+                inactive_workspace #000000 #000000 #4c566a
+                urgent_workspace   #000000 #000000 #ff0000
+                binding_mode       #000000 #000000 #ffffff
+        }
+}
+
+include /etc/sway/config.d/*
+

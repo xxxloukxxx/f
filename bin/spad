@@ -6,7 +6,7 @@ if [ -z "$t" ]
 then
     st -c spad
 else
-    i3-msg scratchpad show
+    swaymsg scratchpad show
     # xdotool search --class spad windowclose
 fi
 

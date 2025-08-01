@@ -103,14 +103,12 @@ export LANG=fr_FR.UTF-8
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="e ~/.zshrc"
+# alias zshconfig="e ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export FZF_DEFAULT_OPTS='--layout=reverse -x'
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
-# export FZF_DEFAULT_COMMAND='ag --hidden -l -g ""'
 export FZF_CTRL_T_COMMAND='ag -l -g ""'
-# export FZF_CTRL_T_COMMAND='ag --hidden -l -g ""'
 
 export EDITOR=vim
 export VISUAL=vim
@@ -131,9 +129,6 @@ alias e="vim"
 alias zz="zathura --fork"
 
 alias lgit="git add . && git commit -m \"$(date)\" && git push"
-alias make_and_push="make && lgit"
-
-alias maj="sudo apt-get -y -qq update && sudo apt-get -y -qq upgrade"
 
 export NNN_OPTS='der'
 export NNN_FIFO=/tmp/nnn.fifo
@@ -175,6 +170,3 @@ n ()
     }
 }
 
-
-
-[ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X" # boot up x-cmd.
