@@ -1,4 +1,4 @@
-all: upgrade install sway fonts ohmyzsh config
+all: upgrade install sway fonts ohmyzsh config suckless
 
 upgrade:
 	echo "\n.......... Update and upgrade"
@@ -54,7 +54,7 @@ ohmyzsh:
 	chsh -s /bin/zsh
 
 config:
-	echo "\n.......... Copy .zshrc, .vimrc and friends to ~/"
+	echo "\n.......... Copy config files"
 	cp -fr .w ~/
 	cp -fr .vimrc ~/
 	cp -fr .zshrc ~/
