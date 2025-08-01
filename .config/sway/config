@@ -18,6 +18,10 @@ include /etc/sway/config-vars.d/*
 ## Config monitor
 output * bg "#000000" solid_color
 
+### Set random wallpaper
+set $wallpapers_path $HOME/.w
+output * bg `find $wallpapers_path -type f | shuf -n 1` fill
+
 ## Config Cursor
 seat seat0 xcursor_theme Adwaita 48
 
