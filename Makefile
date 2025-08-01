@@ -13,7 +13,7 @@ upgrade:
 install:
 	echo "\n.......... Install base"
 	sudo apt -q=5 install git make build-essential cmake ninja-build nnn vim vim-gtk3 lsd ripgrep aptitude nala universal-ctags nala
-	sudo apt -q=5 install curl wget tmux gettext unzip p7zip-full rsync fd-find bat tree btop locales-all gcc silversearcher-ag jq suckless-tools
+	sudo apt -q=5 install curl wget tmux gettext unzip p7zip-full rsync fd-find bat tree btop locales-all gcc silversearcher-ag jq suckless-tools npm
 	sudo apt -q=5 install mpd mpc moc pulseaudio pavucontrol fzf trash-cli
 	sudo apt -q=5 autoremove
 	sudo apt -q=5 autoclean
