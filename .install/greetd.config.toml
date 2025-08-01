@@ -1,0 +1,14 @@
+[terminal]
+vt = 7
+
+[default_session]
+# `agreety` is the bundled agetty/login-lookalike. You can replace `/bin/sh`
+# with whatever you want started, such as `sway`.
+command = "/usr/sbin/agreety --cmd /usr/bin/bash"
+# if using wlgreet
+#command = "sway --config /etc/greetd/sway-config"
+user = "_greetd"
+
+[initial_session]
+command="sway"
+user="cedric"
