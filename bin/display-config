@@ -1,0 +1,16 @@
+#!/bin/bash
+choice=`echo -e "0: LEFT/RIGHT\n1: LEFT/(right)\n2: (left)/RIGHT" | dmenu -n | cut -d ':' -f 1`
+
+left="swaymsg output HDMI-A-1"
+right="swaymsg output DP-1"
+
+# pour avoir les outputs : swaymsg -t get_outputs
+
+# execute the choice in background
+case "$choice" in
+   0) $left enable && $left pos 0 0 && $right enable && $right pos 1024 0 & ;;
+   1) $left enable && $right disable & ;;
+   2) $left disable && $right enable & ;;
+  *) exit ;;
+esac
+
