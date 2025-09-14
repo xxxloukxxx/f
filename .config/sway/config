@@ -22,6 +22,7 @@ client.background       #000000
 
 # Autostart
 exec_always --no-startup-id numlockx on
+exec_always --no-startup-id dex --autostart --environment sway
 exec_always --no-startup-id dunst
 
 # Some bindings

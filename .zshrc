@@ -107,9 +107,7 @@ export ARCHFLAGS="-arch x86_64"
 
 export FZF_DEFAULT_OPTS='--layout=reverse -x'
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
-# export FZF_DEFAULT_COMMAND='ag --hidden -l -g ""'
 export FZF_CTRL_T_COMMAND='ag -l -g ""'
-# export FZF_CTRL_T_COMMAND='ag --hidden -l -g ""'
 
 export EDITOR=vim
 export VISUAL=vim
@@ -133,7 +131,7 @@ alias lgit="git add . && git commit -m \"$(date)\" && git push"
 
 export NNN_OPTS='de'
 export NNN_FIFO=/tmp/nnn.fifo
-# export NNN_PLUG='o:fzopen;m:mocq;c:fzcd;p:preview-tui'
+export NNN_PLUG='o:fzopen;m:mocq;c:fzcd;p:preview-tui'
 export NNN_TRASH=1
 export NNN_OPENER=nopen
 

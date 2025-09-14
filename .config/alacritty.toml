@@ -2,17 +2,41 @@
 live_config_reload = true
 
 [window]
-dynamic_padding = true
-decorations = "None"
+padding = {x=0,y=0}
 
 [font]
 normal = { family = "agave", style = "Regular" }
 size = 14
 
 [cursor]
-style = { shape="Block", blinking="On" }
+style = { shape  = "Block", blinking = "Always" }
 blink_interval = 200
+blink_timeout = 0
+vi_mode_style = { shape = "Block", blinking = "Never" }
 
+# Default colors
 [colors.primary]
-background = "#000000"
+background = '#0A0E14'
+foreground = '#B3B1AD'
 
+# Normal colors
+[colors.normal]
+black   = '#01060E'
+red     = '#EA6C73'
+green   = '#91B362'
+yellow  = '#F9AF4F'
+blue    = '#53BDFA'
+magenta = '#FAE994'
+cyan    = '#90E1C6'
+white   = '#C7C7C7'
+
+# Bright colors
+[colors.bright]
+black   = '#686868'
+red     = '#F07178'
+green   = '#C2D94C'
+yellow  = '#FFB454'
+blue    = '#59C2FF'
+magenta = '#FFEE99'
+cyan    = '#95E6CB'
+white   = '#FFFFFF'

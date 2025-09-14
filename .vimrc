@@ -207,6 +207,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-autoformat/vim-autoformat'
 Plug 'wellle/targets.vim'
 Plug 'yegappan/mru'
+Plug 'ayu-theme/ayu-vim'
 call plug#end()
 " }}}
 
@@ -216,8 +217,11 @@ call plug#end()
 set t_Co=256
 set termguicolors
 try
-    " colorscheme gruvbox
-    colorscheme retrobox
+    " let ayucolor="light"  " for light version of theme
+    " let ayucolor="mirage" " for mirage version of theme
+    let ayucolor="dark"   " for dark version of theme
+    colorscheme ayu
+    " colorscheme retrobox
 catch
     colorscheme default
 endtr

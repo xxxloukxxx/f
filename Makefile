@@ -8,7 +8,7 @@ upgrade:
 install:
 	sudo apt-get -y -qq install sudo vim git make fzf build-essential cmake ninja-build trash-cli gcc silversearcher-ag nnn zsh ripgrep
 	sudo apt-get -y -qq install aptitude universal-ctags curl wget tmux gettext unzip p7zip-full rsync fd-find bat tree btop locales-all npm nodejs
-	sudo apt-get -y -qq install greetd sway swaylock i3blocks feh dunst caja flameshot alacritty numlockx xwayland vim-gtk3 swayosd
+	sudo apt-get -y -qq install greetd sway swaylock i3blocks feh dex dunst caja flameshot alacritty numlockx xwayland vim-gtk3 swayosd
 	sudo apt-get -y -qq install moc pulseaudio pavucontrol gimp firefox-esr firefox-esr-l10n-fr evince zathura okular pdftk imagemagick eog qimgv surf
 	sudo apt-get -y -qq install fonts-hack-otf fonts-hack-ttf fonts-hack-web fonts-hack fonts-liberation2 fonts-liberation fonts-font-awesome fonts-terminus-otb fonts-agave
 	sudo apt-get -y -qq install fonts-noto-color-emoji fonts-noto-core fonts-noto-extra fonts-noto-hinted fonts-noto-mono fonts-noto-ui-core
