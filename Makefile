@@ -31,7 +31,6 @@ config:
 	cp -fr .zshrc ~/
 	cp -fr .profile ~/
 	cp -fr .gitconfig ~/
-	cp -fr .alacritty.toml ~/
 	cp -fr .config ~/
 	cp -fr .moc ~/
 	cp -fr .fonts ~/
