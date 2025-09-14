@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Radio Nova Paris
+https://novazz.ice.infomaniak.ch/novazz-128.mp3
+#EXTINF:-1,France Info
+http://icecast.radiofrance.fr/franceinfo-midfi.mp3
+#EXTINF:-1,Rire et Chansons
+https://streaming.nrjaudio.fm/ou8o8xgk7oiu
+#EXTINF:-1,Le Mouv'
+http://direct.mouv.fr/live/mouv-midfi.mp3
+#EXTINF:-1,Radio RockOn
+https://streaming.radiostreamlive.com/radiorockon_devices
+
